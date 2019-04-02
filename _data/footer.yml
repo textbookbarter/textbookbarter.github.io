@@ -5,10 +5,10 @@
     link: /contact/
 - links:
   - name: Facebook
-    link: https://facebook.com/textbookbarter
+    link: https://facebook.com/TBBarter
     new_window: true
     social_icon: Facebook
   - name: Twitter
-    link: https://twitter.com/textbookbarter
+    link: https://twitter.com/TextbookBarter
     social_icon: Twitter
     new_window: true
