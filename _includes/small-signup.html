@@ -1,0 +1,136 @@
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+  <form action="//textbookbarter.us20.list-manage.com/subscribe/post-json?u=1ab5b3343c15db5feb56a1af6&amp;id=53b0465fba&c=?" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <div id="mc_embed_signup_scroll">
+        
+        <div class="mc-field-group">
+          <!-- <label for="mce-FNAME">First Name </label> -->
+          <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="FIRST">
+        </div>
+
+        <div class="mc-field-group">
+          <!-- <label for="mce-LNAME">Last Name </label> -->
+          <input type="text" value="" name="LNAME" class="" id="mce-LNAME" placeholder="LAST (optional)">
+        </div>
+
+        <div class="mc-field-group">
+          <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="EMAIL@EXAMPLE.COM">
+        </div>
+
+        <!-- fake input to prevent spam-->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1ab5b3343c15db5feb56a1af6_53b0465fba" tabindex="-1" value=""></div>
+
+        <div class="clearfix">
+
+          <input type="submit" value="Start Saving Today" name="subscribe" id="mc-embedded-subscribe" class="button cta alt">
+
+        </div>
+
+        <div id="mce-responses" class="clearfix">
+          <div class="response hide" id="mce-error-response"></div>
+          <div class="response hide" id="mce-success-response"></div>
+        </div>    
+      </div>
+  </form>
+  <div id="mc_ajax_message"></div> 
+</div>
+<!--End mc_embed_signup-->
+<script type="text/javascript">
+  $(document).ready( function () {
+      // I only have one form on the page but you can be more specific if need be.
+      var $form = $('#mc-embedded-subscribe-form');
+
+      if ( $form.length > 0 ) {
+          $('#mc-embedded-subscribe-form .button').bind('click', function ( event ) {
+              if ( event ) event.preventDefault();
+              // validate_input() is a validation function I wrote, you'll have to substitute this with your own.
+              if ( validate_input($form) ) { 
+                //register($form); 
+              }
+          });
+      }
+  });
+
+  function validate_input(form) {
+    var email = $('#mce-EMAIL').val();
+
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    console.log('validation result: ' + re.test(email));
+
+    if(re.test(email)) {
+      $('div#mce-error-response').addClass('hide').removeClass('show');
+      return re.test(email);
+    } else {
+      $('div#mce-error-response').text('Uh oh! Is your email correct?');
+      $('div#mce-error-response').addClass('show').removeClass('hide');
+    }
+
+    
+  }
+
+  function register($form) {
+      $.ajax({
+          type: $form.attr('method'),
+          url: $form.attr('action'),
+          data: $form.serialize(),
+          cache       : false,
+          dataType    : 'json',
+          contentType: "application/json; charset=utf-8",
+          error       : function(err) { console.log(err); alert("Could not connect to the server. Please try again later or contact us if the problem persists."); },
+          success     : function(data) {
+              if (data.result != "success") {
+                  // Something went wrong, do something to notify the user. maybe alert(data.msg);
+                  alert('Hmm - something went wrong. Are you already on the list? Contact us and we can look into it for you! ');
+              } else {
+                  // It worked, carry on...
+                  //alert('successfully addeded to the list!');
+                  $('#mc-embedded-subscribe').val('Success! Check your email!')
+              }
+          }
+      });
+  }
+</script>
+<style type="text/css">
+  div#mc_embed_signup_scroll {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  .mc-field-group:first-of-type {
+      padding-right: 5px;   
+      flex-basis:  calc(50% - 5px);
+  }
+  .mc-field-group:last-of-type {
+      flex-basis: 100%;
+  }
+
+  .mc-field-group {
+      flex-basis:  50%;
+      flex-grow: 1;
+      flex-shrink: 0;
+      margin-bottom: 5px;
+  }
+
+  div#mc_embed_signup_scroll .clearfix {
+      flex-basis: 100%;
+  }
+
+  input#mc-embedded-subscribe {
+      margin-top: 0;
+  }
+  .mc-field-group input {
+      background: rgba(255,255,255,.4);
+  }
+  .mc-field-group input::placeholder {
+      letter-spacing: 1px;
+      color: #292929;
+  }
+  .response {
+    color: white;
+  }
+  .response.hide {
+    display: none;
+  }
+  .response.show {
+    display: block;
+  }
+</style>

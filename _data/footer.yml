@@ -1,0 +1,18 @@
+- links:
+  - name: About
+    link: /about/
+  - name: Contact
+    link: /contact/
+- links:
+  - name: Facebook
+    link: https://facebook.com/TBBarter
+    new_window: true
+    social_icon: Facebook
+  - name: Twitter
+    link: https://twitter.com/TextbookBarter
+    social_icon: Twitter
+    new_window: true
+  - name: Instagram
+    link: https://instagram.com/textbookbarter
+    social_icon: Instagram
+    new_window: true

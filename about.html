@@ -1,0 +1,34 @@
+---
+title: About us
+description: 
+---
+<ul class="staff" style="display: none;">
+	{% for person in site.staff_members %}
+		<li>
+			<div class="square-image"><img src="{% include relative-src.html src=person.image_path %}" alt="{{ person.name }}"/></div>
+			<div class="name"><a target="_blank" href="https://twitter.com/{{ person.twitter }}">{{ person.name }}</a></div>
+			<div class="position">{{ person.position }}</div>
+		</li>
+	{% endfor %}
+</ul>
+<div class="container">
+	<p>
+		TextbookBarter was founded with the simple goal of helping students save money on textbooks. Mason Wallis, the founder, came up with the idea for a student-to-student textbook marketplace in the spring of 2016. At the time, he was attending a small community college in upstate New York. Mason had a vision of students buying and selling textbooks amongst each other for fair prices, rather than paying a fortune for them at the start of each semester and selling them back at the end for a fraction of their value. Thus, TextbookBarter was born.
+	</p>
+	<p>
+		TextbookBarter is a peer-to-peer online marketplace that facilitates the sale of goods and services between college students. Our site features a platform for users to buy and sell textbooks, as well as a free local classifieds section for everything else. You can join at any time, and buy those five books you need for the price of two. That should leave you enough cash for plenty of nights out with friends.
+	</p>
+	<p>As for services, our platform features a tutoring section for students to offer services based on their skills and knowledge. Maybe you don’t need a book, but instead you need to borrow someone else's brain for an hour or two to pass an exam. Maybe you want to turn a B into an A, and help with that can be found in a simple online source. Our mission is simple:<u>to connect college students on a college budget while advancing their education.</u> </p>
+
+	<p>
+		Who knows how much TextbookBarter could grow? There are thousands of colleges in the United States, and the cost of textbooks is only going up. <u>That’s where you can help.</u> We can create a great website for you to use, but we need your feedback and suggestions to make it even better. <u>We love hearing from our users.</u> We’d love to hear your thoughts on what we’re doing, and we’ll be running several contests and doing giveaways throughout the entire Fall 2019 semester to show our appreciation. So tell your friends and sign up today. 
+
+	</p>
+	<p>
+	We have big plans for TextbookBarter, and we’re excited that you’re a part of it.	
+	</p>
+	<p>
+	Mason Wallis <br>
+	<i>Founder</i>
+	</p>
+</div>
